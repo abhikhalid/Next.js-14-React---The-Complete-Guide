@@ -1,0 +1,7 @@
+Setting Up A SQLite Database
+
+i. npm install better-sqlite3
+
+ii. download initdb.js
+
+iii. node initdb.js 
