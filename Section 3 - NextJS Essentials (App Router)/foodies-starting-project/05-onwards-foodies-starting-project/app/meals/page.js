@@ -1,8 +1,15 @@
 import classes from '@/app/meals/page.module.css';
 import MealsGrid from '@/components/meals/meals-grid';
+import { getMeals } from '@/lib/meals';
 import Link from 'next/link';
 
-export default function MealsPage() {
+export default async function MealsPage() {
+
+    //as this component runs on the server, we can directly reach out to the database from here. Hence, we don't need to use fetch() or useEffect function.
+
+    const meals = await getMeals();
+    
+
     return (
         <>
             <header className={classes.header}>
@@ -23,7 +30,7 @@ export default function MealsPage() {
             </header>
 
             <main className={classes.main}>
-                <MealsGrid meals={[]} />
+                <MealsGrid meals={meals} />
             </main>
         </>
     )
