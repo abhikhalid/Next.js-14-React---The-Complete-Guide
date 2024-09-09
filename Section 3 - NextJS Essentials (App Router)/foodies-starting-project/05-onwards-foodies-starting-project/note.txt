@@ -12,3 +12,13 @@ Creating a Slug (Section 3)
 npm install slugify xss
 
 xss prevents us from cross site scripting attack
+
+
+
+Section 3:
+
+Building for Production & Understanding NextJS Catching
+
+npm run build 
+
+npm start
