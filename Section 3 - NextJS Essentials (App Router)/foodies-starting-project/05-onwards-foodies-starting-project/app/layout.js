@@ -1,4 +1,3 @@
-
 import MainHeader from '@/components/main-header/main-header';
 import './globals.css';
 

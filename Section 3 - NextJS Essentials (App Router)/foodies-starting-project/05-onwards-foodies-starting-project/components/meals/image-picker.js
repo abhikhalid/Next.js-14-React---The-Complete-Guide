@@ -16,7 +16,11 @@ export default function ImagePicker({ label, name }) {
     function handleImageChange(event) {
         const file = event.target.files[0];
         
-        if (!file) setPickedImage(null); // just to make sure the preview is reset
+
+        if (!file) {
+            setPickedImage(null);
+            return;
+        } // just to make sure the preview is reset
 
         //In order to show a preview, I want to convert it into a so called data URL
 
@@ -43,7 +47,6 @@ export default function ImagePicker({ label, name }) {
                         />
                     )}
                 </div>
-
                 <input
                     className={classes.input}
                     type="file"
@@ -52,7 +55,6 @@ export default function ImagePicker({ label, name }) {
                     name={name}
                     ref={imageInput}
                     onChange={handleImageChange}
-                    required
                 />
                 <button
                     className={classes.button}

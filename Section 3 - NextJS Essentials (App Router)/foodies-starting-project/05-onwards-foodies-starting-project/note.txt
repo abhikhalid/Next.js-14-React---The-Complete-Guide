@@ -22,3 +22,5 @@ Building for Production & Understanding NextJS Catching
 npm run build 
 
 npm start
+
+Try to add new meal, but it will not be added to the meal list! Because, Next JS behind the scene does some extream caching. so, when we write 'npm run buid', it caches all the page and present to the user. it is good and bad both.
