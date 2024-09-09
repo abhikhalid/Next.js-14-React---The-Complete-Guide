@@ -1,0 +1,6 @@
+for parallel route, you must have layout.js
+
+
+
+
+
