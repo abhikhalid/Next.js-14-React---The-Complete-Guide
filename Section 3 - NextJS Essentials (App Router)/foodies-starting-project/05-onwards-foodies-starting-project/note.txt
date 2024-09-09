@@ -5,3 +5,10 @@ i. npm install better-sqlite3
 ii. download initdb.js
 
 iii. node initdb.js 
+
+
+Creating a Slug (Section 3)
+
+npm install slugify xss
+
+xss prevents us from cross site scripting attack
