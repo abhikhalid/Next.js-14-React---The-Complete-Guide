@@ -1,0 +1,8 @@
+backend is separate backend server. 
+
+cd backend
+npm install
+
+
+
+
