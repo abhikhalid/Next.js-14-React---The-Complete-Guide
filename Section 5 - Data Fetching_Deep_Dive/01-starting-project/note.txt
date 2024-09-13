@@ -1,14 +1,21 @@
-backend is separate backend server. everytime you come here and want to start this project, then first run the backend server by following these command.
+1. So we're now fetching data directly on the server inside of the React Server Component,
+and that's better than doing it on the client side. But if you have a situation as we have it here,
+where you also own that separate backend that provides the data, you have to ask yourself why you split your application into two servers in the first place. Why do we have a separate backend server here? Why don't we instead directly reach out to the database from inside our Next.js application?
+And of course, there might be reasons for that extra server, but here in our demo, in this scenario,
 
-cd backend
-npm install
+there is no such reason. And hence, as a next step, we can even get rid of this fetch call here
+and of sending this extra HTTP request, and instead move that database from that separate backend server into our Next.js project.
+
+So I'll just move that data.db file into this Next.js project and add some code to that Next.js project that does allow us to directly reach out to that database.
 
 
-then open another terminal and type
+2. move data.db from backend to your next js project.
 
-npm run dev
 
-to start next.js server.
+3. now, we need extra dependency which would allow us to directly reach out to data.db database.
+
+npm i better-sqlite3
+
 
 
 
