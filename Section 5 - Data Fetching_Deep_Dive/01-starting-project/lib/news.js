@@ -4,8 +4,9 @@ import { DUMMY_NEWS } from '@/dummy-news';
 
 const db = sql('data.db'); //this will give us access to the database. (SQLlite as a demo database)
 
-export function getAllNews() {
+export async function getAllNews() {
   const news = db.prepare('SELECT * FROM news').all();
+  await new Promise(resolve => setTimeout(resolve, 2000)); //although we don't need it;just to simulate a real backend we added a artificial 2 seconds delay.
   return news;
 }
 
