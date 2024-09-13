@@ -1,7 +1,14 @@
-backend is separate backend server. 
+backend is separate backend server. everytime you come here and want to start this project, then first run the backend server by following these command.
 
 cd backend
 npm install
+
+
+then open another terminal and type
+
+npm run dev
+
+to start next.js server.
 
 
 
