@@ -1,0 +1,12 @@
+Here we have both front-end and backend project.
+
+for front-end,
+
+npm i
+npm run dev
+
+now, navigate to the backend and run it
+
+cd backend
+npm install
+npm start
