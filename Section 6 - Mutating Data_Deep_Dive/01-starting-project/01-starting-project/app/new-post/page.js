@@ -1,6 +1,7 @@
 import { storePost } from '@/lib/posts';
 
 export default function NewPostPage() {
+  //server action must be async function.
   async function createPost(formData) {
     "use server";
     const title = formData.get('title');
