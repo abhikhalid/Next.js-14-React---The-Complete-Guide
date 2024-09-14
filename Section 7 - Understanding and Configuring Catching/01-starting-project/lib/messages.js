@@ -1,4 +1,6 @@
 import { cache } from 'react';
+import { cache as nextCache } from 'react';
+
 import sql from 'better-sqlite3';
 
 const db = new sql('messages.db');
@@ -23,7 +25,16 @@ export function addMessage(message) {
 // }
 
 
-export const getMessages = cache(function getMessages() {
+//For Request Memoization/Deduplication for our custom data source
+// export const getMessages = cache(function getMessages() {
+//   console.log('Fetching messages from db');
+//   return db.prepare('SELECT * FROM messages').all();
+// });
+
+
+//For Request Duplication + Data Cache
+
+export const getMessages = nextCache(cache(function getMessages() {
   console.log('Fetching messages from db');
   return db.prepare('SELECT * FROM messages').all();
-});
+}));

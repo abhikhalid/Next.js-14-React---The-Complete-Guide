@@ -29,7 +29,7 @@ import { unstable_noStore } from 'next/cache';
 // you have to just write it in the component. All the request of that particular component will not be cached.
 
 
-export default  function MessagesPage() {
+export default async function MessagesPage() {
   // unstable_noStore();
   // const response = await fetch('http://localhost:8080/messages', {
   //   next: {
@@ -38,7 +38,7 @@ export default  function MessagesPage() {
   // });
   // const messages = await response.json();
 
-  const messages = getMessages();
+  const messages = await getMessages();
 
   if (!messages || messages.length === 0) {
     return <p>No messages found</p>;
