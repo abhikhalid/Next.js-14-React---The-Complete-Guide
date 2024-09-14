@@ -1,0 +1,5 @@
+for this section, 
+
+open Cloudinary and signup with your google account. Then install
+
+npm i cloudinary
