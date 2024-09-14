@@ -7,7 +7,15 @@ export default async function MessagesPage() {
   //   },
   // });
 
-  const response = await fetch('http://localhost:8080/messages');
+
+  //Next Js overrides fetch function and adds additional property  
+  const response = await fetch('http://localhost:8080/messages', {
+    // cache: 'force-cache' // default
+    // cache: 'no-store' // just in this place, data should not be cached
+    next: {
+      revalidate: 5
+    }
+  });
 
 
   const messages = await response.json();
