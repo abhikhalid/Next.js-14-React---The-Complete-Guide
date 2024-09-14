@@ -1,15 +1,20 @@
 import { redirect } from 'next/navigation';
 
 import { addMessage } from '@/lib/messages';
-import { revalidatePath } from 'next/cache';
+import { revalidatePath, revalidateTag } from 'next/cache';
 
 export default function NewMessagePage() {
   async function createMessage(formData) {
     'use server';
 
     const message = formData.get('message');
-    addMessage(message);
-    // revalidatePath();
+    //addMessage(message);
+    // revalidatePath('/messages'); //only this path will be revalidated
+    // revalidatePath('/messages','layout'); // this path + cache of all nested pages; will be revalidated
+    // revalidatePfath('/','layout'); // all the pages of your application will be revalidated
+    revalidateTag('msg');
+
+
     redirect('/messages');
   }
 
