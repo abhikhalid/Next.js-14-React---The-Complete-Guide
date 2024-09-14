@@ -3,3 +3,18 @@ for this section,
 open Cloudinary and signup with your google account. Then install
 
 npm i cloudinary
+
+
+-> Catching Differences: Development vs Production
+
+npm run build
+
+to see the Production Test, to start the Production Server of Next JS Application.
+
+npm start
+
+Now go to New Post and create a new Post. Go to Feed. Wait what? Where is our post? We can not see it because NEXT JS does some pretty aggressive Catching.
+
+When Preparing Post Page in the Production, It pre-render all your pages during that build process and catches those pre-rendered pages and then it never re-renders them there after unless there are dynamic pages with dynamic segments.
+
+We should tell NEXT JS that it should re-render some of these pages whenever we change the data.
