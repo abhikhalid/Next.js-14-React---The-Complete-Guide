@@ -8,12 +8,9 @@ export default function NewMessagePage() {
     'use server';
 
     const message = formData.get('message');
-    //addMessage(message);
-    // revalidatePath('/messages'); //only this path will be revalidated
-    // revalidatePath('/messages','layout'); // this path + cache of all nested pages; will be revalidated
-    // revalidatePfath('/','layout'); // all the pages of your application will be revalidated
-    revalidateTag('msg');
-
+    addMessage(message);
+    
+    // revalidateTag('msg');
 
     redirect('/messages');
   }

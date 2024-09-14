@@ -10,3 +10,7 @@ now, navigate to the backend and run it
 cd backend
 npm install
 npm start
+
+
+------------------------------------------------------------
+If we use our custom data source directly, only 'Full Route Cache' will work. Apart from that, Request Memoization and Data Cache will not work here. Because we no longer using fetch here.
