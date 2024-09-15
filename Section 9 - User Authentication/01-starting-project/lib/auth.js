@@ -77,7 +77,7 @@ export async function verifyAuth() {
             );
         }
     }
-    catch () {
+    catch (err) {
         
     }
 
