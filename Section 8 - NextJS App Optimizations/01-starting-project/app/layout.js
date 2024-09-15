@@ -1,6 +1,7 @@
 import Header from '@/components/header';
 import './globals.css';
 
+//this metadata is for all the pages.
 export const metadata = {
   title: 'NextPosts',
   description: 'Browse and share amazing posts.',
