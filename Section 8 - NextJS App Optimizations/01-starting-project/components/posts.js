@@ -7,12 +7,18 @@ import LikeButton from './like-icon';
 import { togglePostLikeStatus } from '@/actions/posts';
 import Image from 'next/image';
 
+//config object passed by NEXT JS
+function imageLoader(config) {
+  console.log(config);
+  return config.src;
+}
+
 function Post({ post, action }) {
   return (
     <article className="post">
       <div className="post-image">
         {/* <img src={post.image} alt={post.title} /> */}
-        <Image src={post.image} alt={post.title} fill />
+        <Image loader={imageLoader} quality={50} src={post.image} alt={post.title} fill />
       </div>
       <div className="post-content">
         <header>
